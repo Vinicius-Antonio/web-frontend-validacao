@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Clube do Café</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">Café Aconchego</a>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="cadastro.html">Clube do Café</a></li>
+                    <li>
+                        <a href="admin.html" title="Admin">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            Admin
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="admin-container">
+                <h1>Gerenciamento de Membros</h1>
+            
+                <div class="card">
+                    <h2>Cadastrar Novo Membro</h2>
+                    <form id="admin-form">
+                        <div class="form-group">
+                            <label for="user-name">Nome do Usuário</label>
+                            <input type="text" id="user-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="user-email">E-mail</label>
+                            <input type="email" id="user-email" required>
+                        </div>
+                        <div class="form-group button-group">
+                            <button type="submit" class="btn">Cadastrar</button>
+                            <button type="button" id="clear-form-btn" class="btn btn-secondary">Limpar Campos</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="card" style="margin-top: 30px;">
+                    <h2>Membros Cadastrados</h2>
+                    <div class="list-controls">
+                        <input type="text" id="search-input" placeholder="Pesquisar por nome ou e-mail...">
+                        <button id="delete-all-btn" class="btn btn-danger">Excluir Todos</button>
+                    </div>
+                    
+                    <ul id="user-list">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <footer class="footer">
+        <div class="container">
+            <p>Café Aconchego &copy; 2025</p>
+            <a href="https://github.com/Vinicius-Antonio" class="github-link">Desenvolvido por Vinicius Antonio</a>
+        </div>
+    </footer>
+
+    <script src="js/admin.js" defer></script>
+</body>
+</html>
+

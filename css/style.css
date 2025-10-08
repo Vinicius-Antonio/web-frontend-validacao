@@ -77,10 +77,9 @@ body {
 }
 
 .nav-menu svg {
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
 }
-
 
 main {
     flex-grow: 1;
@@ -121,6 +120,7 @@ h1, h2, h3 {
     border-radius: 8px;
     box-shadow: var(--sombra-padrao);
     transition: transform 0.3s ease;
+    will-change: transform;
 }
 
 .gallery img:hover {
@@ -128,9 +128,9 @@ h1, h2, h3 {
 }
 
 .info-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    display: flex;
+    flex-direction: column; 
+    gap: 40px;
     margin-top: 50px;
 }
 
@@ -144,6 +144,23 @@ h1, h2, h3 {
 .card h2 {
     font-size: 2rem;
     margin-bottom: 15px;
+}
+
+.card2 {
+    background-color: var(--cor-destaque);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--sombra-padrao);
+    margin-top: 5px; 
+}
+
+.card2 h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.card2 ul {
+    list-style-position: inside;
 }
 
 .card ul {
@@ -254,11 +271,30 @@ h1, h2, h3 {
     background-color: var(--cor-primaria-escura);
 }
 
+.btn-secondary {
+    background-color: #ccc;
+    color: #333;
+}
+
+.btn-secondary:hover {
+    background-color: #bbb;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: var(--cor-branco);
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
 .admin-container {
     max-width: 800px;
     margin: 0 auto;
 }
-.admin-container h1{
+
+.admin-container h1 {
     text-align: center;
     margin-bottom: 30px;
 }
@@ -268,28 +304,13 @@ h1, h2, h3 {
     gap: 15px;
 }
 
-.btn-secondary {
-    background-color: #ccc;
-    color: #333;
-}
-.btn-secondary:hover {
-    background-color: #bbb;
-}
-
-.btn-danger {
-    background-color: #dc3545;
-    color: var(--cor-branco);
-}
-.btn-danger:hover {
-    background-color: #c82333;
-}
-
 .list-controls {
     display: flex;
     gap: 15px;
     margin-bottom: 15px;
     flex-wrap: wrap;
 }
+
 .list-controls input {
     flex-grow: 1;
     padding: 10px;
@@ -323,14 +344,20 @@ h1, h2, h3 {
 #user-list .user-info span {
     display: block;
 }
+
 #user-list .user-info .user-name {
     font-weight: bold;
 }
+
 #user-list .user-info .user-email {
-    font-size: 0.9rem; color: #555;
+    font-size: 0.9rem;
+    color: #555;
 }
+
 #user-list .user-info .user-date {
-    font-size: 0.8rem; color: #888; margin-top: 5px;
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 5px;
 }
 
 .delete-btn {
@@ -341,7 +368,6 @@ h1, h2, h3 {
     font-weight: bold;
     padding: 5px 10px;
 }
-
 
 .footer {
     background-color: var(--cor-texto-principal);
@@ -391,3 +417,4 @@ h1, h2, h3 {
         gap: 15px;
     }
 }
+
