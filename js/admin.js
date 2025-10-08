@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const renderUsers = (usersToRender) => {
         userList.innerHTML = '';
-        
         const users = usersToRender || getUsers();
         
         if (users.length === 0) {
@@ -39,13 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     <span class="user-date">Cadastrado em: ${new Date(user.date).toLocaleDateString('pt-BR')}</span>
                 </div>
                 <button class="delete-btn" title="Excluir membro">Excluir</button>
-                `;
+            `;
             userList.appendChild(li);
         });
     };
     
     adminForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+        e.preventDefault(); 
         const users = getUsers();
         
         const newUser = {
@@ -55,10 +54,10 @@ document.addEventListener('DOMContentLoaded', () => {
             date: new Date().toISOString()
         };
         
-        users.push(newUser);
-        saveUsers(users);
-        renderUsers();
-        adminForm.reset();
+        users.push(newUser); 
+        saveUsers(users); 
+        renderUsers(); 
+        adminForm.reset(); 
     });
 
     clearFormBtn.addEventListener('click', () => {
@@ -67,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     userList.addEventListener('click', (e) => {
         if (e.target.classList.contains('delete-btn')) {
-            const li = e.target.closest('li');
+            const li = e.target.closest('li'); 
             const userId = li.dataset.id;
             
             let users = getUsers();
@@ -79,6 +78,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     deleteAllBtn.addEventListener('click', () => {
+        const users = getUsers();
+        if (users.length === 0) {
+            alert('Não há membros cadastrados para excluir.');
+            return;
+        }
+
         if (confirm('Tem certeza que deseja excluir todos os membros?')) {
             localStorage.removeItem(STORAGE_KEY);
             renderUsers(); 
@@ -99,3 +104,4 @@ document.addEventListener('DOMContentLoaded', () => {
     
     renderUsers();
 });
+
