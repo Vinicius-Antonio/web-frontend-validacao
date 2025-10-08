@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin - Clube do Café</title>
+    <title>Admin - Cafeteria Aconchego</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
     <header class="header">
         <div class="container">
             <nav class="navbar">
                 <a href="index.html" class="logo">Café Aconchego</a>
                 <ul class="nav-menu">
-                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html">Início</a></li> 
                     <li><a href="cadastro.html">Clube do Café</a></li>
                     <li>
                         <a href="admin.html" title="Admin">
@@ -27,13 +26,13 @@
     </header>
 
     <main>
-        <div class="container">
-            <div class="admin-container">
-                <h1>Gerenciamento de Membros</h1>
-            
-                <div class="card">
-                    <h2>Cadastrar Novo Membro</h2>
-                    <form id="admin-form">
+        <div class="container admin-container">
+            <h1>Gerenciamento de Membros</h1>
+
+            <div class="form-container">
+                <h2>Cadastrar Novo Membro</h2>
+                <form id="admin-form">
+                    <div class="form-grid">
                         <div class="form-group">
                             <label for="user-name">Nome do Usuário</label>
                             <input type="text" id="user-name" required>
@@ -42,32 +41,41 @@
                             <label for="user-email">E-mail</label>
                             <input type="email" id="user-email" required>
                         </div>
-                        <div class="form-group button-group">
-                            <button type="submit" class="btn">Cadastrar</button>
-                            <button type="button" id="clear-form-btn" class="btn btn-secondary">Limpar Campos</button>
-                        </div>
-                    </form>
-                </div>
-
-                <div class="card" style="margin-top: 30px;">
-                    <h2>Membros Cadastrados</h2>
-                    <div class="list-controls">
-                        <input type="text" id="search-input" placeholder="Pesquisar por nome ou e-mail...">
-                        <button id="delete-all-btn" class="btn btn-danger">Excluir Todos</button>
                     </div>
-                    
-                    <ul id="user-list">
-                    </ul>
+                    <div class="button-group">
+                        <button type="submit" class="btn">Cadastrar</button>
+                        <button type="button" id="clear-form-btn" class="btn btn-secondary">Limpar Campos</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="card" style="margin-top: 40px;">
+                <h2>Lista de Membros</h2>
+                <div class="list-controls">
+                    <input type="text" id="search-input" placeholder="Pesquisar por nome ou e-mail...">
+                    <button id="delete-all-btn" class="btn btn-danger">Excluir Todos</button>
                 </div>
+                <ul id="user-list">
+                </ul>
             </div>
         </div>
     </main>
 
-
     <footer class="footer">
         <div class="container">
             <p>Café Aconchego &copy; 2025</p>
-            <a href="https://github.com/Vinicius-Antonio" class="github-link">Desenvolvido por Vinicius Antonio</a>
+            <div class="footer-contact-info">
+                <span>Rua do Sabor, 123 - Centro, Cidade do Café</span>
+                <div class="social-icons">
+                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/Vinicius-Antonio" target="_blank">Desenvolvido por Vinicius Antonio</a>
+                <span>|</span>
+                <a href="assets/curriculo.pdf" download>Baixar Currículo</a>
+            </div>
         </div>
     </footer>
 

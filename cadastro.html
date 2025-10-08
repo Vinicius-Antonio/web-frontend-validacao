@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clube do Café - Cadastro</title>>
+    <title>Clube do Café - Cafeteria Aconchego</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
     <header class="header">
         <div class="container">
             <nav class="navbar">
                 <a href="index.html" class="logo">Café Aconchego</a>
                 <ul class="nav-menu">
-                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html">Início</a></li> 
                     <li><a href="cadastro.html">Clube do Café</a></li>
                     <li>
                         <a href="admin.html" title="Admin">
@@ -29,47 +28,44 @@
     <main>
         <div class="container">
             <div class="form-container">
-                <h1>Faça parte do Clube do Café</h1>
-                <p class="subtitle">Receba novidades, promoções exclusivas e muito mais!</p>
-
-                <form action="index.html">
+                <h1>Faça parte do Clube do Café!</h1>
+                <p class="subtitle">Cadastre-se para receber novidades, promoções e muito mais.</p>
+                
+                <form id="cadastro-form" action="login.html">
                     <div class="form-grid">
                         <div class="form-group full-width">
                             <label for="nome">Nome Completo</label>
                             <input type="text" id="nome" name="nome" required>
                         </div>
-                        
                         <div class="form-group full-width">
                             <label for="email">E-mail</label>
                             <input type="email" id="email" name="email" required>
                         </div>
-
-                        <div class="form-group">
-                            <label for="cpf">CPF</label>
-                            <input type="text" id="cpf" name="cpf" required placeholder="000.000.000-00">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="nascimento">Data de Nascimento</label>
-                            <input type="date" id="nascimento" name="nascimento" required>
-                        </div>
-                        
                         <div class="form-group full-width">
-                            <label for="cafe_preferido">Qual seu café preferido?</label>
-                            <select id="cafe_preferido" name="cafe_preferido" required>
-                                <option value="">Selecione uma opção</option>
-                                <option value="expresso">Expresso</option>
+                            <label for="senha">Crie uma Senha</label>
+                            <input type="password" id="senha" name="senha" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone">Telefone</label>
+                            <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="data-nascimento">Data de Nascimento</label>
+                            <input type="date" id="data-nascimento" name="data-nascimento" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="cafe-preferido">Qual seu café preferido?</label>
+                            <select id="cafe-preferido" name="cafe-preferido" required>
+                                <option value="" disabled selected>Selecione uma opção</option>
+                                <option value="espresso">Espresso</option>
                                 <option value="capuccino">Capuccino</option>
                                 <option value="latte">Latte</option>
-                                <option value="coado">Coado</option>
+                                <option value="filtrado">Café Filtrado</option>
                                 <option value="outro">Outro</option>
                             </select>
                         </div>
                     </div>
-
-                    <div class="form-group" style="margin-top: 20px;">
-                        <button type="submit" class="btn">Quero fazer parte!</button>
-                    </div>
+                    <button type="submit" class="btn">Cadastrar e Ir para Login</button>
                 </form>
             </div>
         </div>
@@ -78,9 +74,22 @@
     <footer class="footer">
         <div class="container">
             <p>Café Aconchego &copy; 2025</p>
-            <a href="https://github.com/Vinicius-Antonio" class="github-link">Desenvolvido por Vinicius Antonio</a>
+            <div class="footer-contact-info">
+                <span>Rua do Sabor, 123 - Centro, Cidade do Café</span>
+                <div class="social-icons">
+                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/Vinicius-Antonio" target="_blank">Desenvolvido por Vinicius Antonio</a>
+                <span>|</span>
+                <a href="assets/curriculo.pdf" download>Baixar Currículo</a>
+            </div>
         </div>
     </footer>
+
+    <script src="js/auth.js" defer></script>
 </body>
 </html>
 
