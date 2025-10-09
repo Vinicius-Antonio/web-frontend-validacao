@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('search-input');
     const deleteAllBtn = document.getElementById('delete-all-btn');
     const userList = document.getElementById('user-list');
-
     const STORAGE_KEY = 'cafeClubMembers';
 
     const getUsers = () => {
@@ -68,23 +67,26 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target.classList.contains('delete-btn')) {
             const li = e.target.closest('li'); 
             const userId = li.dataset.id;
-            
-            let users = getUsers();
-            users = users.filter(user => user.id !== userId);
-            
-            saveUsers(users);
-            renderUsers();
+            const userName = li.querySelector('.user-name').textContent;
+
+            if (confirm(`Tem certeza que deseja excluir o membro "${userName}"?`)) {
+                let users = getUsers();
+                users = users.filter(user => user.id !== userId);
+                
+                saveUsers(users);
+                renderUsers();
+            }
         }
     });
 
     deleteAllBtn.addEventListener('click', () => {
         const users = getUsers();
         if (users.length === 0) {
-            alert('Não há membros cadastrados para excluir.');
+            alert('Nenhum membro cadastrado para excluir.');
             return;
         }
 
-        if (confirm('Tem certeza que deseja excluir todos os membros?')) {
+        if (confirm('Tem certeza que deseja excluir TODOS os membros?')) {
             localStorage.removeItem(STORAGE_KEY);
             renderUsers(); 
         }
