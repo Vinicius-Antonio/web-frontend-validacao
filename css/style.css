@@ -19,7 +19,6 @@
     box-sizing: border-box;
 }
 
-/* CÓDIGO NOVO PARA CORRIGIR O AVISO */
 .visually-hidden {
     position: absolute;
     width: 1px;
